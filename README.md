@@ -24,9 +24,10 @@ sudo chgrp -R xd .Xilinx
 sudo chown -R xd .Xilinx
 
 nearny there, use this manually setup the system environmental variables:
+(actually I dont need SDK, so I didn't ticked this opetion during installation, however, <b>if you do need this function, make sure ticked SDK box during installation</b>, otherwise it would be diffcult to install it afterwards. Xilinx official website said users can add extra function by [help/aditional function in vivado]) however I did try, and the [next] button on the bottom of the window is just hang there. may need to uninstall it and reinstall it to make the SDK install properly.
 
 /opt/Xilinx/Vivado/2015.2/settings64.sh
-/opt/Xilinx/SDK/2015.2/settings64.sh(actually after enter this line, i got an error said cannot find, I ignored it for now)
+/opt/Xilinx/SDK/2015.2/settings64.sh(actually after enter this line, i got an error said cannot find beacuse I didn't install SDK in my system, I ignored it for now)
 
 
 now its the last stage, copy two lines below to .bashrc file 
@@ -45,3 +46,42 @@ ok, now its time to launch your vivado
 
 more info refer:
 https://allmyzynquits.wordpress.com/2015/08/18/installing-vivado-sdk-2015-2-under-ubuntu-14-04/
+
+===================================================================================================
+Install cable drivers
+
+when connect board hardware with Vivado hardware manager, the cable driver is needed:
+
+install the prerequisite
+On 32-bit
+sudo apt-get install gitk git-gui libusb-dev build-essential libc6-dev fxload
+On 64-bit
+sudo apt-get install gitk git-gui libusb-dev build-essential libc6-dev-i386 fxload
+
+
+
+Download the driver source and install:
+
+/*
+manully download install_drivers.tar.gz from the following Xilinx website:
+secure.xilinx.com/webreg/clickthrough.do?cid=103670
+
+Extract the driver script and its support files by typing:
+tar xzvf install_drivers.tar.gz
+cd install_drivers
+./install_drivers
+
+[actually I followed these steps above from xilinx, I got Error 2 feedback in terminal, so I used steps below]
+*/
+alternatively, follow steps below:
+
+cd /opt/Xilinx
+sudo git clone git://git.zerfleddert.de/usb-driver
+cd usb-driver/
+
+On 32-bit
+sudo make
+On 64-bit
+sudo make lib32
+[ref http://dreamrunner.org/blog/2012/09/12/install-xilinx-ise-on-the-ubuntu/]
+
