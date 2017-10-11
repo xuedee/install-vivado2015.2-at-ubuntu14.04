@@ -23,7 +23,7 @@ cd ~
 sudo chgrp -R xd .Xilinx
 sudo chown -R xd .Xilinx
 
-nearny there, use this manually setup the system environmental variables:
+nearly there, use this manually setup the system environmental variables:
 (actually I dont need SDK, so I didn't ticked this opetion during installation, however, <b>if you do need this function, make sure ticked SDK box during installation</b>, otherwise it would be diffcult to install it afterwards. Xilinx official website said users can add extra function by [help/aditional function in vivado]) however I did try, and the [next] button on the bottom of the window is just hang there. may need to uninstall it and reinstall it to make the SDK install properly.
 
 /opt/Xilinx/Vivado/2015.2/settings64.sh
@@ -101,6 +101,8 @@ Xilinx Return code = 0
 Return code = 0
 Driver installation successful.
 
+
+remember to restart the PC to makesure its working properly.
 
 job done.
 
