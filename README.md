@@ -91,7 +91,7 @@ go to directory
 
 copy the install_script folder to /tmp
 
-sudo -s(change the permition into full sudo access, maynot need this step)
+sudo -s(change the permission into full sudo access, maynot need this step)
 cd /tmp/install_script/install_drivers 
 ./install_drivers 
 
