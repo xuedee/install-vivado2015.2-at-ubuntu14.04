@@ -85,3 +85,24 @@ On 64-bit
 sudo make lib32
 [ref http://dreamrunner.org/blog/2012/09/12/install-xilinx-ise-on-the-ubuntu/]
 
+
+go to directory
+/opt/Xilinx/Vivado/2015.2/data/xicom/cable_drivers/lin64
+
+copy the install_script folder to /tmp
+
+sudo -s(change the permition into full sudo access, maynot need this step)
+cd /tmp/install_script/install_drivers 
+./install_drivers 
+
+you will get 
+Digilent Return code = 0
+Xilinx Return code = 0
+Return code = 0
+Driver installation successful.
+
+
+job done.
+
+
+
